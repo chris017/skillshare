@@ -28,8 +28,13 @@ const Home: NextPage = () => {
         />
         <link href="/favicon.ico" rel="icon" />
       </Head>
-
       <main className={styles.main}>
+        <h1 className={styles.title}>
+          Welcome to <a href="">Skill<span>-Share</span></a>
+        </h1>
+        <p className={styles.description}>
+          Skill<span>-Share</span> is a decentralized application that allows users to<br></br>exchange skills with each other in a <span>peer-to-peer</span> manner.<br></br>The dApp can be used to <span>connect</span> users with complementary<br></br>skills and facilitate skill<span>-sharing</span> and learning.
+        </p>
         <ConnectButton accountStatus={{
           smallScreen: 'avatar',
           largeScreen: 'full',
@@ -37,12 +42,6 @@ const Home: NextPage = () => {
           showBalance={{
             smallScreen: false,
             largeScreen: true,}}/>
-        <h1 className={styles.title}>
-          Welcome to <a href="">Skill<span>-Share</span></a>
-        </h1>
-        <p className={styles.description}>
-          Skill<span>-Share</span> is a decentralized application that allows users to<br></br>exchange skills with each other in a <span>peer-to-peer</span> manner.<br></br>The dApp can be used to <span>connect</span> users with complementary<br></br>skills and facilitate skill<span>-sharing</span> and learning.
-        </p>
       </main>
     </div>
   );
