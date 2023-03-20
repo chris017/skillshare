@@ -28,9 +28,11 @@
   flex-grow: 1;
 }
 
-.title a {
-  color: #0d76fc;
-  text-decoration: none;
+.title span {
+  background: linear-gradient(140deg, rgb(127, 198, 179) 0%, rgb(48, 245, 90) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .title a:hover,
@@ -54,6 +56,13 @@
   margin: 0 0 2rem;
   line-height: 1.5;
   font-size: 1.5rem;
+}
+
+.description span {
+  background: linear-gradient(140deg, rgb(127, 198, 179) 0%, rgb(48, 245, 90) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .grid {
