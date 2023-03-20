@@ -2,8 +2,22 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import { UseContractConfig } from 'wagmi';
+import config from '../data.json';
+import { useContractRead } from 'wagmi'
+import { useEffect } from 'react';
+
 
 const Home: NextPage = () => {
+  const { data, isError, isLoading } = useContractRead({
+    address: "0x22d819FA52ffDB2465adcfC9B638f925c869f17f",
+    abi: config.abi,
+    functionName: 'getAllAppUser',
+  })
+
+  useEffect(()=>{
+    console.log(data);
+  },);
   return (
     <div className={styles.container}>
       <Head>
