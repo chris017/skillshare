@@ -155,7 +155,7 @@ function ChatApp() {
                                 ))}
                                 </ul>
                             ) : (
-                                <div>No users found.</div>
+                                <div>No users found. Please make sure you are connected to Metamask</div>
                             )}
                         </DrawerBody>
                     </DrawerContent>
