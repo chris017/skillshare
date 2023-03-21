@@ -18,13 +18,14 @@ import {
 } from '@chakra-ui/react';
 
 
-function validateName(value) {
+function validateName(value: string | undefined) {
   if (!value) {
     return 'Name is required';
   } else if (value.toLowerCase() !== 'chris') {
     return "Username already taken";
   }
 }
+
 
 function ChatApp() {
     const config = usePrepareContractWrite({
