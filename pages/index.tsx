@@ -1,7 +1,9 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import { useState } from 'react';
 import { useContractRead, UseContractConfig } from 'wagmi';
 import config from '../data.json';
 import { Heading,
@@ -29,8 +31,17 @@ const Home: NextPage = () => {
     functionName: 'getAllAppUser',
   })
   if (Array.isArray(data)) {
-    console.log(data[0].name)
+    console.log(data)
   }
+
+  const [started, setStarted] = useState(false);
+  const router = useRouter();
+
+  const handleGetStarted = () => {
+    setStarted(true);
+    router.push('/chat');
+  };
+
   return (
     <div>
       <Box>
@@ -74,7 +85,7 @@ const Home: NextPage = () => {
                   color="white"
                   height='48px'
                   width='200px'
-                  
+                  onClick={() => router.push('/chat')}
                   bg='linear-gradient(140deg, rgb(127, 198, 179) 0%, rgb(48, 245, 90) 100%)'
                   _hover={{ bg: "white", color: "green.400" }}
                   >

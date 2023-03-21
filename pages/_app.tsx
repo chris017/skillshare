@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={theme}>
       <CSSReset />
         <WagmiConfig client={wagmiClient}>
-          <RainbowKitProvider coolMode chains={chains} theme={lightTheme({
+          <RainbowKitProvider coolMode modalSize="compact" chains={chains} theme={lightTheme({
             accentColor: 'linear-gradient(140deg, rgb(127, 198, 179) 0%, rgb(48, 245, 90) 100%)',
             accentColorForeground: 'white',
             borderRadius: 'small',
