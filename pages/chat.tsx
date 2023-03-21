@@ -26,7 +26,7 @@ function validateName(value) {
   }
 }
 
-function chat() {
+function ChatApp() {
     const config = usePrepareContractWrite({
     address: '0x22d819FA52ffDB2465adcfC9B638f925c869f17f',
     abi: datajs.abi,
@@ -104,4 +104,4 @@ function chat() {
   );
 };
 
-export default chat;
+export default ChatApp;
