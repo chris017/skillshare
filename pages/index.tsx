@@ -88,7 +88,7 @@ const Home: NextPage = () => {
             </Center>    
           </Box>
       </Box>
-      <Container mt={5} size={"xl"}>
+      <Container mt={5} size={"xl"} centerContent variant={"bold"}>
         <ChakraProvider>
           <Box position="relative" p={4} color="#09203f">
             <VStack spacing={4}>
