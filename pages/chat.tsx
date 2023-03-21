@@ -6,6 +6,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import datajs from '../data.json';
 import * as React from 'react';
 export { React };
+import Link from 'next/link'
 
 import {
   Heading,
@@ -66,7 +67,7 @@ function ChatApp() {
     <div>
       <Flex>
         <Box m='5'>
-          <Heading size={'lg'}><a href='/'>Skill<span className={styles.gradient}>-Share</span></a></Heading>
+          <Heading size={'lg'}><Link href="/">Skill<span className={styles.gradient}>-Share</span></Link></Heading>
         </Box>
         <Spacer />
         <Box m='5'>
