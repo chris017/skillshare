@@ -54,9 +54,9 @@ function ChatApp() {
   const [name, setName] = useState('');
   const [showUsers, setShowUsers] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen: is, onOpen: on, onClose: off} = useDisclosure()
   const initialRef = React.useRef(null)
   const finalRef = React.useRef(null)
-  
 
   const handleShowUsers = () => {
     setShowUsers(true);
@@ -66,7 +66,7 @@ function ChatApp() {
     <div>
       <Flex>
         <Box m='5'>
-          <Heading size={'lg'}>Skill<span className={styles.gradient}>-Share</span></Heading>
+          <Heading size={'lg'}><a href='/'>Skill<span className={styles.gradient}>-Share</span></a></Heading>
         </Box>
         <Spacer />
         <Box m='5'>
@@ -86,56 +86,78 @@ function ChatApp() {
         <Heading size="2xl" m={5}>
           Skill<span className={styles.gradient}>-Share</span> Chat
         </Heading>
-            <Button 
-            size='md'
-            color="white"
-            bg='green.400'
-            _hover={{ bg: "white", color: "green.400" }}
-            onClick={onOpen}>Register</Button>
-            <Modal
-                initialFocusRef={initialRef}
-                isOpen={isOpen}
-                onClose={onClose}
-                >
-                <ModalOverlay />
-                <ModalContent bg={"#09203f"}>
-                    <ModalHeader>Create your account</ModalHeader>
-                <ModalCloseButton />
-                <ModalBody pb={6}>
-                    <FormControl>
-                    <FormLabel>Create Username</FormLabel>
-                    <Input ref={initialRef} placeholder='username' _active={{borderColor: 'white', }}/>
-                    </FormControl>
-                </ModalBody>
+        <Flex mt={5}>
+            <Box>
+                <Button 
+                size='md'
+                color="white"
+                bg='green.400'
+                _hover={{ bg: "white", color: "green.400" }}
+                onClick={onOpen}>Register</Button>
+                <Modal
+                    initialFocusRef={initialRef}
+                    isOpen={isOpen}
+                    onClose={onClose}
+                    >
+                    <ModalOverlay />
+                    <ModalContent bg={"#09203f"}>
+                        <ModalHeader>Create your account</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody pb={6}>
+                        <FormControl>
+                        <FormLabel>Create Username</FormLabel>
+                        <Input ref={initialRef} placeholder='username' _active={{borderColor: 'white', }}/>
+                        </FormControl>
+                    </ModalBody>
 
-                <ModalFooter>
-                    <Button color="white" 
-                    bg='green.400'
-                    _hover={{ bg: "white", color: "green.400" }} mr={3} disabled={!write} onClick={() => write?.()}>
-                    Save
-                    </Button>
-                    <Button onClick={onClose}
-                    color="white"
-                    bg='red.400'
-                    _hover={{ bg: "white", color: "green.400" }}
-                    >Cancel</Button>
-                </ModalFooter>
-                </ModalContent>
-            </Modal>
-        {isLoading && <div>Check Wallet</div>}
-        {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
-      </Container>
-      <Container>
-        <Box>
-            <Button onClick={handleShowUsers}>Show AllUsers</Button>
-            {showUsers && Array.isArray(AllUsers) && (
-            <ul>
-                {AllUsers.map((user, index) => (
-                <li key={index}>{user}</li>
-                ))}
-            </ul>
-            )}
-        </Box>
+                    <ModalFooter>
+                        <Button color="white" 
+                        bg='green.400'
+                        _hover={{ bg: "white", color: "green.400" }} mr={3} disabled={!write} onClick={() => write?.()}>
+                        Save
+                        </Button>
+                        <Button onClick={onClose}
+                        color="white"
+                        bg='red.400'
+                        _hover={{ bg: "white", color: "green.400" }}
+                        >Cancel</Button>
+                    </ModalFooter>
+                    </ModalContent>
+                </Modal>
+            </Box>
+            <Spacer m={5}/>
+            <Box>
+                <Button 
+                size='md'
+                color="white"
+                bg='green.400'
+                _hover={{ bg: "white", color: "green.400" }}
+                onClick={on}>All Users</Button>
+                <Drawer
+                    isOpen={is}
+                    placement="bottom"
+                    onClose={off}
+                    isFullHeight={true}>
+                    <DrawerOverlay>
+                    <DrawerContent>
+                        <DrawerCloseButton />
+                        <DrawerHeader bg={"#09203f"}>All Users</DrawerHeader>
+                        <DrawerBody bg={"#09203f"}>
+                            {Array.isArray(AllUsers) ? (
+                                <ul>
+                                {AllUsers.map((user, index) => (
+                                    <li key={index}>User: {user.name}<br></br>Address: {user.accountAddress}</li>
+                                ))}
+                                </ul>
+                            ) : (
+                                <div>No users found.</div>
+                            )}
+                        </DrawerBody>
+                    </DrawerContent>
+                    </DrawerOverlay>
+                </Drawer>
+            </Box>
+        </Flex>
       </Container>
     </div>
   );
