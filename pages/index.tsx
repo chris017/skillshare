@@ -72,7 +72,9 @@ const Home: NextPage = () => {
             >
             Get Started
         </Button>
-        
+        <Center height='50px' m={5}>
+          <Divider orientation='vertical' />
+        </Center>
         <List spacing={3}>
           <ListItem>
             <Text size={"xl"}><ListIcon as={CheckIcon} color='green.500' />
