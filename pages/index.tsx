@@ -25,15 +25,6 @@ import { Heading,
 import { CheckIcon} from '@chakra-ui/icons'
 
 const Home: NextPage = () => {
-  const { data, isError, isLoading } = useContractRead({
-    address: '0x22d819FA52ffDB2465adcfC9B638f925c869f17f',
-    abi: config.abi,
-    functionName: 'getAllAppUser',
-  })
-  if (Array.isArray(data)) {
-    console.log(data)
-  }
-
   const [started, setStarted] = useState(false);
   const router = useRouter();
 
