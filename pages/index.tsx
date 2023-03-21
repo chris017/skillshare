@@ -98,6 +98,7 @@ const Home: NextPage = () => {
           </ListItem>
           <ListItem>
             <Text size={"xl"}><ListIcon as={CheckIcon} color='green.500' />
+              Rating and Review System: The dApp can have a rating and review system that allows users to rate and review each other's skills and facilitate trust between users.
             </Text>
           </ListItem>
         </List>
