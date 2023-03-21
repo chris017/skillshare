@@ -11,6 +11,8 @@ import { Heading,
   Button,
   ButtonGroup,
   Box,
+  ChakraProvider, 
+  VStack,
   Container,
   Flex,
   Spacer,
@@ -59,7 +61,7 @@ const Home: NextPage = () => {
               />
           </Box>
         </Flex>
-          <Box>
+          <Box mt={10}>
             <Center>
               <Heading size="3xl" m={5}> 
                 Welcome to Skill<span className={styles.gradient}>-Share</span>
@@ -76,6 +78,7 @@ const Home: NextPage = () => {
                   color="white"
                   height='48px'
                   width='200px'
+                  mb={5}
                   onClick={() => router.push('/chat')}
                   bg='linear-gradient(140deg, rgb(127, 198, 179) 0%, rgb(48, 245, 90) 100%)'
                   _hover={{ bg: "white", color: "green.400" }}
@@ -85,6 +88,29 @@ const Home: NextPage = () => {
             </Center>    
           </Box>
       </Box>
+      <Container mt={5} size={"xl"}>
+        <ChakraProvider>
+          <Box position="relative" p={4} color="#09203f">
+            <VStack spacing={4}>
+              <Container bg={"white"} borderRadius={"md"} fontSize={"xl"}>
+                &gt; Person A: Have you checked out Skillshare on Polygon?
+              </Container>
+              <Container bg={"linear-gradient(140deg, rgb(127, 198, 179) 0%, rgb(48, 245, 90) 100%)"} borderRadius={"md"} fontSize={"xl"}>
+                &gt; Person B: No, what is it?
+              </Container>
+              <Container bg={"white"} borderRadius={"md"} fontSize={"xl"}>
+                &gt; Person A: Skillshare on Polygon is a platform where users can connect with others to share their skills, get help on various topics, and collaborate on projects.
+              </Container>
+              <Container bg={"linear-gradient(140deg, rgb(127, 198, 179) 0%, rgb(48, 245, 90) 100%)"} borderRadius={"md"} fontSize={"xl"}>
+                &gt; Person B: That sounds really cool. How does it work?
+              </Container>
+              <Container bg={"white"} borderRadius={"md"} fontSize={"xl"}>
+                &gt; Person A: Users can join different groups based on their interests, and then they can chat, share resources, and help each other out. Skillshare on Polygon provides a safe and supportive environment to learn new things and connect with like-minded individuals.
+              </Container>
+            </VStack>
+          </Box>
+        </ChakraProvider>
+      </Container>
       <Container centerContent size={"xl"} mt={10}>
           <List spacing={3}>
             <ListItem>

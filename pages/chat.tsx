@@ -10,7 +10,12 @@ export { React };
 
 import {
   Heading,
+  ChakraProvider, 
+  VStack,
+  defineStyle,
+  defineStyleConfig,
   Button,
+  extendTheme,
   Container,
   Flex,
   Spacer,
@@ -38,6 +43,13 @@ import {
 
 
 function ChatApp() {
+
+    const defaultProps = {
+        size: 'md',
+        variant: 'colorful',
+        colorScheme: 'brand',
+    }
+
   const config = usePrepareContractWrite({
     address: '0x22d819FA52ffDB2465adcfC9B638f925c869f17f',
     abi: datajs.abi,
