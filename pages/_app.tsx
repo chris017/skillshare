@@ -11,10 +11,7 @@ import { ChakraProvider, CSSReset, theme } from '@chakra-ui/react'
 
 const { chains, provider, webSocketProvider } = configureChains(
   [
-    mainnet,
     polygon,
-    optimism,
-    arbitrum,
     polygonMumbai,
     ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [goerli] : []),
   ],
