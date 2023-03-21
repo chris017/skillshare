@@ -5,6 +5,7 @@ import { useContractWrite, usePrepareContractWrite, useContractRead } from 'wagm
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import datajs from '../data.json';
 import * as React from 'react';
+import Link from 'next/link';
 export { React };
 
 import {
@@ -66,7 +67,11 @@ function ChatApp() {
     <div>
       <Flex>
         <Box m='5'>
-          <Heading size={'lg'}>Skill<span className={styles.gradient}>-Share</span></Heading>
+          <Heading size={'lg'}>
+            <Link href="/">
+                <a>Skill<span className={styles.gradient}>-Share</span></a>
+            </Link>
+          </Heading>
         </Box>
         <Spacer />
         <Box m='5'>
