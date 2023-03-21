@@ -18,15 +18,6 @@ import {
 } from '@chakra-ui/react';
 
 
-function validateName(value: string | undefined) {
-  if (!value) {
-    return 'Name is required';
-  } else if (value.toLowerCase() !== 'chris') {
-    return "Username already taken";
-  }
-}
-
-
 function ChatApp() {
     const config = usePrepareContractWrite({
     address: '0x22d819FA52ffDB2465adcfC9B638f925c869f17f',
@@ -61,45 +52,11 @@ function ChatApp() {
         <Heading size="2xl" m={5}>
           Skill<span className={styles.gradient}>-Share</span> Chat
         </Heading>
-        <Formik
-          initialValues={{ name: '' }}
-          onSubmit={(values, actions) => {
-            setName(values.name);
-            actions.setSubmitting(false);
-          }}
-        >
-          {(props) => (
-            <Form>
-              <Field name='name' validate={validateName}>
-                {({ field, form }) => (
-                  <FormControl isInvalid={form.errors.name && form.touched.name}>
-                    <FormLabel>Create Username</FormLabel>
-                    <Input {...field} placeholder='Username' />
-                    <FormErrorMessage>{form.errors.name}</FormErrorMessage>
-                  </FormControl>
-                )}
-              </Field>
-              <Button
-                mt={4}
-                colorScheme='teal'
-                isLoading={props.isSubmitting}
-                type='submit'
-              >
-                Submit
-              </Button>
-                <button disabled={!write} onClick={() => write?.()}>
-                    Register
-                </button>
-                {isLoading && <div>Check Wallet</div>}
-                {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
-            </Form>
-          )}
-        </Formik>
-        {name && (
-          <Box m={5}>
-            <Heading size="md">Welcome {name}!</Heading>
-          </Box>
-        )}
+        <button disabled={!write} onClick={() => write?.()}>
+            Register
+        </button>
+        {isLoading && <div>Check Wallet</div>}
+        {isSuccess && <div>Transaction: {JSON.stringify(data)}</div>}
       </Container>
     </div>
   );
