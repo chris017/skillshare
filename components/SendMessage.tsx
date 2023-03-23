@@ -7,7 +7,7 @@ import { useState } from "react";
 function SendMessage() {
   const [addressSend, setAddress] = useState("");
   const [message, setMessage] = useState("");
-  const [args, setArgs] = useState([]);
+  const [args, setArgs] = useState<Array<string | undefined>>([]);
 
   const { config } = usePrepareContractWrite({
     address: "0x65e68bDb2227Ab0Fc00b6C4a67bc4b158D997aE3",
