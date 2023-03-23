@@ -27,13 +27,6 @@ function MyInbox() {
     args: [address],
   });
 
-  if (messages && messages.length > 0) {
-    messages.forEach((message) => {
-      console.log(message.message);
-    });
-  } else {
-    console.log("No messages found for the specified address.");
-  }
   const { isOpen: is, onOpen: on, onClose: off } = useDisclosure();
   return (
     <Box>
