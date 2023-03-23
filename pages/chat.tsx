@@ -1,6 +1,5 @@
 import styles from "../styles/Home.module.css";
 import * as React from "react";
-import Register from "../components/Register";
 export { React };
 import HeaderChat from "../components/HeaderChat";
 import SendMessage from "../components/SendMessage";

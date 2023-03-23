@@ -10,7 +10,6 @@ import {
   Box,
 } from "@chakra-ui/react";
 import React from "react";
-import styles from "../styles/Home.module.css";
 import { useContractRead, useAccount } from "wagmi";
 import datajs from "../data.json";
 
