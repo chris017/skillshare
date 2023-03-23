@@ -39,7 +39,7 @@ function MyInbox() {
       >
         My Inbox
       </Button>
-      <Drawer isOpen={is} placement="bottom" onClose={off} isFullHeight={true}>
+      <Drawer isOpen={is} placement="bottom" onClose={off} isFullHeight={false}>
         <DrawerOverlay>
           <DrawerContent>
             <DrawerCloseButton />
