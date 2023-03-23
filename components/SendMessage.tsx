@@ -1,7 +1,7 @@
 import { Box, Button, Input, Flex, Spacer, Center } from "@chakra-ui/react";
 import datajs from "../data.json";
 import { useContractWrite, usePrepareContractWrite, useAccount } from "wagmi";
-import MyInbox from "./MyInbox";
+import MyInbox from "./myinbox";
 import { useState } from "react";
 
 function SendMessage() {
