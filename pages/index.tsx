@@ -111,7 +111,7 @@ const Home: NextPage = () => {
           </Box>
         </ChakraProvider>
       </Container>
-      <Container centerContent size={"xl"} mt={10}>
+      <Container centerContent size={"xl"} mt={10} mb={10}>
           <List spacing={3}>
             <ListItem>
               <Text fontSize={"lg"}><ListIcon as={CheckIcon} color='green.500' />
