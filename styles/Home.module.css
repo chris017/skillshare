@@ -1,4 +1,11 @@
-
+@media (prefers-color-scheme: dark) {
+  .gradient {
+      background: linear-gradient(140deg, rgb(127, 198, 179) 0%, rgb(48, 245, 90) 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+}
 .gradient {
   background: linear-gradient(140deg, rgb(127, 198, 179) 0%, rgb(48, 245, 90) 100%);
   background-clip: text;
