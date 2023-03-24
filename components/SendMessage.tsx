@@ -61,6 +61,8 @@ function SendMessage() {
         <FormLabel>Address</FormLabel>
         <Input
           type="text"
+          bg={"white"}
+          color={"#09203f"}
           placeholder="Reciver Address 0x.."
           focusBorderColor={"green.400"}
           value={addressSend}
@@ -75,13 +77,14 @@ function SendMessage() {
         <FormLabel>Message</FormLabel>
         <Input
           type="text"
+          bg={"white"}
+          color={"#09203f"}
           placeholder="Your Message"
           focusBorderColor={"green.400"}
           value={message}
           onChange={handleMessageChange}
           minLength={1}
           maxLength={150}
-          style={{ lineHeight: "1.5", padding: "10px" }}
         />
       </FormControl>
       <Center>
