@@ -8,6 +8,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
   Box,
+  Divider,
 } from "@chakra-ui/react";
 import React from "react";
 import { useContractRead, useAccount } from "wagmi";
@@ -51,11 +52,16 @@ function MyInbox() {
                     <li key={index}>
                       Message: {message.message}
                       <br></br>Sender: {message.sender}
+                      <br></br>
+                      <Divider orientation="horizontal" />
                     </li>
                   ))}
                 </ul>
               ) : (
-                <div>No messages found.</div>
+                <div color="white">
+                  No messages found.<br></br>Please make sure you are connected
+                  to your Walltet.
+                </div>
               )}
             </DrawerBody>
           </DrawerContent>

@@ -7,14 +7,19 @@ import {
   Center,
   FormControl,
   FormLabel,
+  IconButton,
   FormHelperText,
   FormErrorMessage,
   useToast,
+  Container,
 } from "@chakra-ui/react";
 import datajs from "../data.json";
+import { Link } from "@chakra-ui/react";
 import { useContractWrite, usePrepareContractWrite, useAccount } from "wagmi";
 import MyInbox from "./MyInbox";
 import { useState, useEffect } from "react";
+import { CheckIcon } from "@chakra-ui/icons";
+import { FaTwitter, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 function SendMessage() {
   const [addressSend, setAddress] = useState("");
@@ -63,7 +68,7 @@ function SendMessage() {
           type="text"
           bg={"white"}
           color={"#09203f"}
-          placeholder="Reciver Address 0x.."
+          placeholder="Receiver Address 0x.."
           focusBorderColor={"green.400"}
           value={addressSend}
           onChange={handleAddressChange}
@@ -104,6 +109,41 @@ function SendMessage() {
           <MyInbox />
         </Flex>
       </Center>
+      <Container as="footer" mt={25}>
+        <Center>
+          <Box m="5">
+            <Link href="https://www.linkedin.com/in/christian-schmid-8b4b1b16a/">
+              <IconButton
+                aria-label="LinkedIn"
+                icon={<FaLinkedin />}
+                size="md"
+                variant="ghost"
+                _hover={{ bg: "white", color: "green.400" }}
+                mr="2"
+              />
+            </Link>
+            <Link href="https://github.com/chris017">
+              <IconButton
+                aria-label="Github"
+                icon={<FaGithub />}
+                size="md"
+                variant="ghost"
+                _hover={{ bg: "white", color: "green.400" }}
+                mr="2"
+              />
+            </Link>
+            <Link href="https://twitter.com/Chris120321">
+              <IconButton
+                aria-label="Twitter"
+                icon={<FaTwitter />}
+                size="md"
+                variant="ghost"
+                _hover={{ bg: "white", color: "green.400" }}
+              />
+            </Link>
+          </Box>
+        </Center>
+      </Container>
     </Box>
   );
 }
