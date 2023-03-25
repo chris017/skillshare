@@ -68,7 +68,7 @@ function SendMessage() {
           type="text"
           bg={"white"}
           color={"#09203f"}
-          placeholder="Reciver Address 0x.."
+          placeholder="Receiver Address 0x.."
           focusBorderColor={"green.400"}
           value={addressSend}
           onChange={handleAddressChange}
