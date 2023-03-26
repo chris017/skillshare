@@ -16,10 +16,9 @@ The chat system is an essential feature of Skill-Share, allowing users to connec
 2. Skill Listing: Users can list the skills they have to offer and the skills they want to learn on the dApp.
    Rating and Review System: The dApp can have a rating and review system that allows users to rate and review each other's skills and facilitate trust between users.
 
-### 📣 Pitch Presentation 📣
-
-The presentation used for the Skill-Share pitch at Alchemy University can be found under pitch.html in this repo. We hope this presentation helps explain the vision and benefits of Skill-Share.
-
 ### 🌐 Live Version 🌐
 
 A live version of Skill-Share is deployed and available at https://skillshare-six.vercel.app. We encourage you to check it out, explore the dApp, and connect with others to start sharing your skills today!
+
+
+<img width="369" alt="skillshare" src="https://user-images.githubusercontent.com/28670581/227794221-02f5499d-d565-4666-9cdf-5a14acf86116.png">
