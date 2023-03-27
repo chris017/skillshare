@@ -113,7 +113,7 @@ function SendMessage() {
       </Center>
       <Container mt={5}>
         <Center>
-          <Text>
+          <Text fontSize={"md"}>
             Feel <span className={styles.gradient}>free</span> to send me a
             message:
           </Text>
@@ -121,17 +121,21 @@ function SendMessage() {
       </Container>
       <Container>
         <Center>
-          <Text>0xD50516E04B2fBd8da4c09d52e88664e9b47d51bC</Text>
+          <Text fontSize={"sm"}>
+            0xD50516E04B2fBd8da4c09d52e88664e9b47d51bC
+          </Text>
         </Center>
       </Container>
       <Container mt={1}>
         <Center>
-          <Text>Contract Address:</Text>
+          <Text fontSize={"md"}>
+            <span className={styles.gradient}>Contract</span> Address:
+          </Text>
         </Center>
       </Container>
       <Container>
         <Center>
-          <Text>
+          <Text fontSize={"sm"}>
             <Link href="https://mumbai.polygonscan.com/address/0x65e68bDb2227Ab0Fc00b6C4a67bc4b158D997aE3">
               0x65e68bDb2227Ab0Fc00b6C4a67bc4b158D997aE3
             </Link>
