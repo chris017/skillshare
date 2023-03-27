@@ -4,6 +4,7 @@ import {
   Input,
   Flex,
   Spacer,
+  Text,
   Center,
   FormControl,
   FormLabel,
@@ -15,6 +16,7 @@ import {
 } from "@chakra-ui/react";
 import datajs from "../data.json";
 import { Link } from "@chakra-ui/react";
+import styles from "../styles/Home.module.css";
 import { useContractWrite, usePrepareContractWrite, useAccount } from "wagmi";
 import MyInbox from "./MyInbox";
 import { useState, useEffect } from "react";
@@ -109,7 +111,34 @@ function SendMessage() {
           <MyInbox />
         </Flex>
       </Center>
-      <Container as="footer" mt={25}>
+      <Container mt={5}>
+        <Center>
+          <Text>
+            Feel <span className={styles.gradient}>free</span> to send me a
+            message:
+          </Text>
+        </Center>
+      </Container>
+      <Container>
+        <Center>
+          <Text>0xD50516E04B2fBd8da4c09d52e88664e9b47d51bC</Text>
+        </Center>
+      </Container>
+      <Container mt={1}>
+        <Center>
+          <Text>Contract Address:</Text>
+        </Center>
+      </Container>
+      <Container>
+        <Center>
+          <Text>
+            <Link href="https://mumbai.polygonscan.com/address/0x65e68bDb2227Ab0Fc00b6C4a67bc4b158D997aE3">
+              0x65e68bDb2227Ab0Fc00b6C4a67bc4b158D997aE3
+            </Link>
+          </Text>
+        </Center>
+      </Container>
+      <Container as="footer">
         <Center>
           <Box m="5">
             <Link href="https://www.linkedin.com/in/christian-schmid-8b4b1b16a/">
